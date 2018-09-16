@@ -6,22 +6,26 @@ const styles = theme =>
   theme && {
     box: {
       //   background: theme.primary.color, //TODO: fix this -- this is working due to conditional on line 30
-      width: 100,
-      height: 100,
-      marginRight: "2vw",
-      marginTop: "2vw"
+      display: "grid",
+      width: "20vw",
+      height: "20vh"
     },
-    FlexBox: {
-      width: "400px",
-      display: "flex",
-      flexWrap: "wrap"
+    wrapper: {
+      marginLeft: "10vw",
+      display: "grid",
+      gridTemplateColumns: "repeat(3, 1fr)",
+      gridGap: "1vw",
+      rowGap: "7px",
+      gridAutoRows: "22vh",
+      width: "80%",
+      height: "70%"
     }
   };
 
 const ElevenBoxes = props => {
   const { hour, minutes, classes } = props;
   return (
-    <div style={classes.FlexBox}>
+    <div style={classes.wrapper}>
       {[...Array(12)].map((x, i) => (
         <Box
           key={i}

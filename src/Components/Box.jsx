@@ -5,7 +5,8 @@ const styles = theme =>
   theme && {
     minutes: {
       color: theme.primary.contrastText,
-      fontSize: "3em"
+      fontSize: "calc( 55px + (24 - 16) * (100vw - 400px) / (800 - 400) )",
+      placeSelf: "center"
     }
   };
 
