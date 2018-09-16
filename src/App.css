@@ -1,0 +1,32 @@
+body{
+    background: #550E52;
+    text-align:center;
+}
+.container{
+    display:grid;
+    justify-items: center;
+    padding-top:15vh;
+}
+.box {
+    margin-left:2vw;
+    margin-top:2vw;
+    background:#BF607B;
+    width: 100px;
+    height: 100px;
+}
+.minutes{
+    color:#AA71A7;
+    font-size:3em;
+}
+.flexBox{
+    width: 400px;
+    display:flex;
+    flex-wrap:wrap;
+}
+App-title {
+    font-size: 1.5em;
+  }
+
+.App-intro {
+font-size: large;
+}
