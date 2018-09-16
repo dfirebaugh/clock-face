@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Box from "./Components/Box";
+import ElevenBoxes from './Components/ElevenBoxes';
 import './App.css';
 
 class App extends Component {
@@ -26,16 +26,7 @@ class App extends Component {
 
         return (
             <div className="App container" >
-                <div className="flexBox" >
-                    {
-                        [...Array(12)].map((x, i) => (
-                            <Box
-                                key={i} style={{ background: i === hour && 'none' }}
-                                minutes={i === hour && minutes} i={i + 1}
-                            />
-                        ))
-                    }
-                </div>
+                <ElevenBoxes hour={hour} minutes={minutes} />
             </div>
         );
     }
