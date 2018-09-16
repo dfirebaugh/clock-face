@@ -28,11 +28,12 @@ class App extends Component {
             <div className="App container" >
                 <div className="flexBox" >
                     {
-                        [...Array(12)].map((x, i) => <Box key={i} style={{
-                            background: i === hour && 'none'
-                        }}
-                            minutes={i === hour && minutes} i={i + 1}
-                        />)
+                        [...Array(12)].map((x, i) => (
+                            <Box
+                                key={i} style={{ background: i === hour && 'none' }}
+                                minutes={i === hour && minutes} i={i + 1}
+                            />
+                        ))
                     }
                 </div>
             </div>

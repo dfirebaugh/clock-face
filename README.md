@@ -1,7 +1,7 @@
 ## Clock Face 
 This a simple react app for an Intro to React Workshop that I'm running
 
-[demo](https://dfirebaugh.github.io/clock-face)
+[demo](https://dfirebaugh.github.io/clock-face/)
 
 [meetup](https://www.meetup.com/HackRVA-Meetup/events/254676188/)
 
