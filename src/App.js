@@ -4,15 +4,15 @@ import './App.css';
 
 class App extends Component {
     componentDidMount() {
-        this.update()
+        this.timer = setInterval(this.tick, 1000)
     }
-    componentDidUpdate() {
-        setInterval(this.update, 1000)
+    componentWillUnmount() {
+        clearInterval(this.timer)
     }
-    update = () => {
+    tick = () => {
         this.setState({
             date: new Date()
-        })
+        });
     };
     getTime() {
         const { date } = this.state
