@@ -2,7 +2,7 @@ import React from 'react';
 import Box from './Box';
 
 const ElevenBoxes = props => {
-    const { hour, minutes } = props
+    const { hour, minutes } = props;
     return (
         <div className="flexBox" >
             {
