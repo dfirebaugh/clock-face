@@ -22,11 +22,9 @@ class App extends Component {
         };
     }
     render() {
-        const { hour, minutes } = this.state ? this.getTime() : { hour: false, minutes: false };
-
         return (
             <div className="App container" >
-                <ElevenBoxes hour={hour} minutes={minutes} />
+                {this.state && <ElevenBoxes {...this.getTime()} />}
             </div>
         );
     }
