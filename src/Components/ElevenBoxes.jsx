@@ -1,40 +1,52 @@
 import React from "react";
 import Box from "./Box";
-import withStyles from "../Contexts/withStyles";
+import Theme from '../Themes/Theme';
 
-const styles = theme =>
-  theme && {
-    box: {
-      //   background: theme.primary.color, //TODO: fix this -- this is working due to conditional on line 30
-      width: 100,
-      height: 100,
-      marginRight: "2vw",
-      marginTop: "2vw"
-    },
-    FlexBox: {
-      width: "400px",
-      display: "flex",
-      flexWrap: "wrap"
-    }
-  };
+
+const styles = `
+.box {
+    display: grid;
+    width: 20vw;
+    height: 20vh;
+}
+.box-background{
+    background: ${Theme.secondary.color};
+}
+.wrapper {
+    margin-left: 5vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1vw;
+    row-gap: 7px;
+    grid-auto-rows: 22vh;
+    width: 80%;
+    height: 70%;
+}
+.minutes {
+    color: ${Theme.primary.contrastText};
+    font-size: calc( 55px + 8 * (100vw - 400px) / 400 );
+    place-self: center;
+}
+    `
 
 const ElevenBoxes = props => {
-  const { hour, minutes, classes } = props;
-  return (
-    <div style={classes.FlexBox}>
-      {[...Array(12)].map((x, i) => (
-        <Box
-          key={i}
-          style={{
-            ...classes.box,
-            background: i + 1 === hour ? "none" : "#BF607B"
-          }}
-          minutes={i + 1 === hour && minutes}
-          i={i + 1}
-        />
-      ))}
-    </div>
-  );
+    const { hour, minutes } = props;
+    const clickHandler = e => console.log(e.target)
+
+    return (
+        <div className='wrapper'>
+            {[...Array(12)].map((x, i) => (
+                <Box
+                    key={i}
+                    hasBackground={i + 1 !== hour && 'box-background'}
+                    clickHandler={clickHandler}
+                    minutes={i + 1 === hour && minutes}
+                    i={i + 1}
+                />
+            ))}
+            <style jsx> {styles} </style>
+        </div>
+    );
 };
 
-export default withStyles(styles)(ElevenBoxes);
+export default ElevenBoxes;

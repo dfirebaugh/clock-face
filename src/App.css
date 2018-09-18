@@ -6,7 +6,8 @@ body {
 .container {
     display: grid;
     justify-items: center;
-    padding-top: 15vh;
+    padding-top: 3vh;
+    height: 100%;
 }
 
 App-title {
