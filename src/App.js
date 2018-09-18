@@ -39,13 +39,11 @@ class App extends Component {
         return;
     }
   }
-  dec = () => this.setState({ componentNum: this.state.componenNum - 1 })
   inc = () => this.setState({ componentNum: this.state.componentNum + 1 })
   render() {
     return (
       <div className="App container">
-        <button onClick={this.dec}> prev </button>
-        <button onClick={this.inc}> next </button>
+        <button onClick={this.inc}> change </button>
         {this.state && this.getComponent(this.state.componentNum)}
       </div>
     );
