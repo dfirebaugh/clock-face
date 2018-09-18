@@ -3,14 +3,14 @@ import Box from "./Box";
 import Theme from '../Themes/Theme';
 
 
-const tempStyle = `
+const styles = `
 .box {
     display: grid;
     width: 20vw;
     height: 20vh;
 }
 .box-background{
-    background: ${Theme.primary.color};
+    background: ${Theme.secondary.color};
 }
 .wrapper {
     margin-left: 5vw;
@@ -44,7 +44,7 @@ const ElevenBoxes = props => {
                     i={i + 1}
                 />
             ))}
-            <style jsx> {tempStyle} </style>
+            <style jsx> {styles} </style>
         </div>
     );
 };

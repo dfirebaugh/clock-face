@@ -1,11 +1,11 @@
 const palette = {
   primary: {
-    color: "#BF607B", // pink
+    color: "#550E52",
     contrastText: "#AA71A7"
   },
   secondary: {
-    color: "pink",
-    contrastText: "grey"
+    color: "#BF607B",
+    contrastText: "#220020"
   }
 };
 
