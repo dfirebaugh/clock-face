@@ -57,7 +57,7 @@ const SecondSweep = props => {
                 </h2>
             </div>
             <style jsx> {styles} </style>
-        </div >
+        </div>
     )
 }
 
