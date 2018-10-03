@@ -19,7 +19,7 @@ $ npm install
 
 Run the project.
 ```shell
-$npm start
+$ npm start
 ```
 
 ## Dependencies
