@@ -9,4 +9,15 @@ const palette = {
   }
 };
 
-export default palette;
+const palette2 = {
+  primary: {
+    color: "#9590A8",
+    contrastText: "#634B66"
+  },
+  secondary: {
+    color: "#D8D2E1",
+    contrastText: "#9E7B9B"
+  }
+};
+
+export {palette as default, palette2};
