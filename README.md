@@ -1,6 +1,6 @@
 # Clock Face
 
-> ##### A simple react app for Intro to React Workshop
+> A simple react app for Intro to React Workshop
 
 ### Usage
 
