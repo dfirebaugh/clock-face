@@ -1,9 +1,8 @@
 # Clock Face
+This a simple react app for an Intro to **React Workshop** that I'm running.
 
-> A simple react app for Intro to React Workshop
-
-### Usage
-
+## Getting Started :rocket:
+First we'll clone the project.
 ```sh
 git clone https://github.com/dfirebaugh/clock-face
 
@@ -11,6 +10,8 @@ cd clock-face
 
 npm install && npm start
 ```
+
+Open the project and install node dependencies.
 
 ## Demo
 
@@ -28,5 +29,5 @@ You can see the demo from here: [https://dfirebaugh.github.io/clock-face/](https
 
 ##### Inspired
 
--   The ElevenBoxes clock face is largely inspired by https://github.com/Athulus/11-squares
+-   The ElevenBoxes clock face is largely inspired by [11 squares](https://github.com/Athulus/11-squares).
     which is inspired by: https://apps.getpebble.com/en_US/application/553420d3bb57c2bf87000059
