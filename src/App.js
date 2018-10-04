@@ -4,11 +4,12 @@ import SecondSweep from './Components/SecondSweep';
 import CanvasClock from './Components/CanvasClock';
 import Theme from './Themes/Theme';
 import "./App.css";
+import moment from 'moment'
 
 class App extends Component {
   constructor() {
     super();
-    this.state = { componentNum: 0, date: new Date() }
+    this.state = { componentNum: 0, date: new Date(), alert: false }
   }
   componentDidMount() {
     this.timer = setInterval(this.tick, 1000);
@@ -17,8 +18,11 @@ class App extends Component {
     clearInterval(this.timer);
   }
   tick = () => {
+    const { alert } = this.state
+    const date = new Date()
     this.setState({
-      date: new Date()
+      date,
+      alert: !alert && moment(date).isSame('2018-10-31')
     });
   };
   getTime() {
@@ -46,6 +50,7 @@ class App extends Component {
   }
   inc = () => this.setState({ componentNum: this.state.componentNum + 1 })
   render() {
+    const { alert } = this.state
     const buttonStyle = {
       background: Theme.secondary.color,
       color: Theme.secondary.contrastText,
@@ -59,6 +64,10 @@ class App extends Component {
         style: 'solid'
       }
 
+    }
+
+    if (alert) {
+      window.alert('Happy Halloween')
     }
 
     return (
