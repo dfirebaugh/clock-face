@@ -4,6 +4,7 @@
     "private": true,
     "homepage": "https://dfirebaugh.github.io/clock-face",
     "dependencies": {
+        "moment": "^2.22.2",
         "react": "^16.5.1",
         "react-dom": "^16.5.1",
         "react-scripts": "1.1.5"
