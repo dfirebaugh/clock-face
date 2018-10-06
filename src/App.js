@@ -10,7 +10,7 @@ import moment from 'moment'
 class App extends Component {
   constructor() {
     super();
-    this.state = { componentNum: 0, date: new Date(), alert: false }
+    this.state = { componentNum: 0, date: new Date(), alert: false, holiday: 'none' }
   }
   componentDidMount() {
     this.timer = setInterval(this.tick, 1000);
@@ -20,10 +20,24 @@ class App extends Component {
   }
   tick = () => {
     const date = new Date()
-    const alert = moment(date).isSame('2018-10-31', 'month', 'day')
+    let alert
+    let holiday = 'none'
+
+    if (moment(date).isSame('2018-10-31', 'day')){
+      alert = true
+      holiday = 'Halloween'
+    }
+    else if (moment(date).isSame('2018-11-22', 'day')){
+      alert = true
+      holiday = 'Thanksgiving'
+    }
+    else {
+      alert = false
+    }
     this.setState({
       date,
-      alert
+      alert,
+      holiday
     });
   };
   getTime() {
@@ -69,7 +83,7 @@ class App extends Component {
     return (
       <div>
         {this.state.alert === true &&
-          <Alert holiday='Halloween' backgroundColor="orange" fontColor="black" timeout="5000"/>
+          <Alert holiday={this.state.holiday} timeout="5000"/>
         }
         <div className="App container">
           <button style={buttonStyle} onClick={this.inc} >

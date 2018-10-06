@@ -3,13 +3,31 @@ import React, { Component } from "react";
 class Alert extends Component {
   state = {
   	style : {
-  		background: this.props.backgroundColor,
-  		color: this.props.fontColor
-  	},
+  	  		background: '',
+  	  		color: ''
+  	  	},
   	timedOut : false
   }
 
+  setHolidayColors = (holiday) => {
+
+  	switch (holiday) {
+      case 'Halloween':
+	    this.setState({ style : { background: 'orange', color: 'black'}})
+        return
+      case 'Thanksgiving':
+	    this.setState({ style : { background: 'brown', color: 'yellow'}})
+        return
+      default:
+	    this.setState({ style : { background: 'white', color: 'black'}})
+        return
+    }
+
+  }
+
   componentDidMount() {
+  	this.setHolidayColors(this.props.holiday)
+
   	setTimeout(() => {
   		this.setState({ timedOut : true})
   	}, this.props.timeout)
