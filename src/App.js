@@ -3,6 +3,7 @@ import Alert from "./Components/Alert";
 import ElevenBoxes from "./Components/ElevenBoxes";
 import SecondSweep from './Components/SecondSweep';
 import CanvasClock from './Components/CanvasClock';
+import PacmanClock from './Components/PacmanClock';
 import Theme from './Themes/Theme';
 import "./App.css";
 import moment from 'moment'
@@ -58,6 +59,8 @@ class App extends Component {
         return <ElevenBoxes {...this.getTime()} />;
       case 2:
         return <SecondSweep {...this.getTime()} />;
+      case 3:
+        return <PacmanClock {...this.getTime()} />;
       default:
         this.setState({ componentNum: 0 })
         return;
