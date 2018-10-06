@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Alert from "./Components/Alert";
 import ElevenBoxes from "./Components/ElevenBoxes";
 import SecondSweep from './Components/SecondSweep';
 import CanvasClock from './Components/CanvasClock';
@@ -18,11 +19,11 @@ class App extends Component {
     clearInterval(this.timer);
   }
   tick = () => {
-    const { alert } = this.state
     const date = new Date()
+    const alert = moment(date).isSame('2018-10-31', 'month', 'day')
     this.setState({
       date,
-      alert: !alert && moment(date).isSame('2018-10-31')
+      alert
     });
   };
   getTime() {
@@ -50,7 +51,6 @@ class App extends Component {
   }
   inc = () => this.setState({ componentNum: this.state.componentNum + 1 })
   render() {
-    const { alert } = this.state
     const buttonStyle = {
       background: Theme.secondary.color,
       color: Theme.secondary.contrastText,
@@ -66,16 +66,18 @@ class App extends Component {
 
     }
 
-    if (alert) {
-      window.alert('Happy Halloween')
-    }
-
     return (
-      <div className="App container">
-        <button style={buttonStyle} onClick={this.inc} >
-          change
-        </button>
-        {this.state && this.getComponent(this.state.componentNum)}
+      <div>
+        {this.state.alert === true &&
+          <Alert holiday='Halloween' backgroundColor="orange" fontColor="black" timeout="5000"/>
+        }
+        <div className="App container">
+          <button style={buttonStyle} onClick={this.inc} >
+            change
+          </button>
+          {this.state && this.getComponent(this.state.componentNum)}
+        </div>
+
       </div>
     );
   }
